@@ -1,0 +1,116 @@
+. {
+	
+	margin:0;
+	padding:0;
+	
+}
+
+body {
+		
+		font-family:arial;
+		
+	}
+
+.contenedor {
+	
+	width:90%;
+	max-width:1000px;
+	margin:20px auto;
+	display: grid;
+	grid-gap:20px;
+	background:#cccccc;
+	grid-template-columns: repeat(3, 1fr); 
+	grid-template-rows: repeat (4, auto);
+	grid-template-areas: "header	 header 	header"
+						"contenido	 contenido  sidebar"
+						"widget-1    widget-2   sidebar"
+						"footer			footer	footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .sidebar,
+.contenedor .contenido,
+.contenedor .footer {
+	background: #ffffff;
+	padding:20px;
+	border-radius: 5px;
+}
+	.contenedor .header {
+		background: blue;
+		text-align: center;
+		grid-area: header;
+
+	}
+	
+	
+	.contenedor .contenido {
+		grid-area: contenido;
+		
+	}
+	
+	.contenedor .sidebar {
+		background:orange;
+		grid-column: 3/4;
+		background:yellow;
+		text-align: center;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		min-height:100px;
+		grid-area: sidebar;
+
+	}
+	
+		.contenedor .footer {
+
+		text-align: center;
+				background: blue;
+				grid-area: footer;
+
+
+		}
+	
+			.contenedor .widget-1,
+			.contenedor .widget-2{
+
+			
+background: #0080ff;
+height:100px;
+text-align: center;
+align-items:center;
+justify-content: center;
+
+			}
+	
+
+	.contenedor .widget-1{
+		
+		grid-area: widget-1;
+		
+	}
+	
+	
+		.contenedor .widget-1{
+		
+		grid-area: widget-2;
+		
+	}
+	
+	
+	@media screen and (max-width: 768px) {
+		.contenedor {
+			grid-template-areas: 
+			
+			"header	 header 	header"
+			"contenido	 contenido  contenido"
+			"sidebar	sidebar		sidebar"
+			"widget-1    widget-2   widget-2"
+			"footer			footer	footer";
+			
+		
+	}
+	
+	}
+	
+	
